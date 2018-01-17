@@ -8,8 +8,47 @@ $t(() => {
     repos = JSON.parse(repos);
     const masterList = $t(".banner-list");
     repos.forEach((repo) => {
-      masterList.append(`<li><a href=${repo.html_url}/>${repo.name}</li>`);
-      $t("li").addClass("list-item");
+      const listItem = $t("<li>");
+      const langIcon = handleLanguage(repo.language);
+      listItem.addClass("list-item");
+      listItem.append(langIcon);
+      listItem.append(`<a href=${repo.html_url}>${repo.name}</a>`);
+      masterList.append(listItem);
     });
+  }
+
+  function handleLanguage(language){
+    const i = $t("<i>");
+    switch (language) {
+      case "Ruby":
+        i.addClass("devicon-ruby-plain-wordmark");
+        return i;
+      case "JavaScript":
+        i.addClass("devicon-javascript-plain");
+        return i;
+      case "PHP":
+        i.addClass("devicon-php-plain");
+        return i;
+      case "Java":
+        i.addClass("devicon-java-plain-wordmark");
+        return i;
+      case "HTML5":
+        i.addClass("devicon-html5-plain-wordmark");
+        return i;
+      case "CSS3":
+        i.addClass("devicon-css3-plain");
+        return i;
+      case "C#":
+        i.addClass("devicon-csharp-line");
+        return i;
+      case "C++":
+        i.addClass("devicon-cplusplus-line");
+        return i;
+      case "TypeScript":
+        i.addClass("devicon-typescript-plain");
+        return i;
+      default:
+
+    }
   }
 });
