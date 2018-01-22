@@ -32,10 +32,10 @@ $t(() => {
       case "Java":
         i.addClass("devicon-java-plain-wordmark");
         return i;
-      case "HTML5":
+      case "HTML":
         i.addClass("devicon-html5-plain-wordmark");
         return i;
-      case "CSS3":
+      case "CSS":
         i.addClass("devicon-css3-plain");
         return i;
       case "C#":
