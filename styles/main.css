@@ -98,10 +98,6 @@
   border-radius: 3px;
 }
 
-.field:focus {
-  border: 2px solid #007FB6;
-}
-
 .submit:hover {
   color: #007FB6;
   transition: color 200ms;
