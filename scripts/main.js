@@ -64,6 +64,12 @@
       case "TypeScript":
         i.addClass("devicon-typescript-plain");
         return i;
+      case "Python":
+        i.addClass("devicon-python-plain");
+        return i;
+      case "Swift":
+        i.addClass("devicon-swift-plain");
+        return i;
       default:
         i.addClass("fa");
         i.addClass("fa-github");
