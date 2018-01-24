@@ -1,5 +1,6 @@
 # DOMbo Combo
-DOMbo Combo is a lightweight library designed to enhance AJAX requests and manipulate DOM elements.
+DOMbo Combo is a lightweight library designed to enhance AJAX requests and manipulate DOM elements. Simply fill in a github username, and DOMbo Combo will
+make an AJAX request to Github's servers, and insert the relevant data in to the DOM.
 ## API
 
 ### each(cb)
@@ -31,6 +32,9 @@ Gets the parent of each element in the set of matched elements
 
 ### find(selector)
 Gets the descendants of each element in the set of matched elements, filtered by a selector
+
+### val()
+Gets the value of the first element in the set of matched elements.
 
 ### on(eventName, callback)
 Attach an event handler function onto the selected element
