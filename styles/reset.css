@@ -14,9 +14,9 @@ span, article, footer, time, small {
   text-decoration: inherit;
   vertical-align: inherit;
   box-sizing: inherit;
-  background: transparent;
+  /* background: transparent; */
+  background: #21162a;
 }
-
 
 ul {
   list-style: none;
@@ -28,7 +28,7 @@ img {
   height: auto;
 }
 
-input[type="password"],
+/* input[type="password"],
 input[type="email"],
 input[type="text"],
 input[type="submit"],
@@ -36,7 +36,7 @@ textarea,
 button {
   -webkit-appearance: none;
   -moz-appearance: none;
-}
+} */
 
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button,

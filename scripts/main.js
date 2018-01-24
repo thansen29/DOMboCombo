@@ -1,13 +1,30 @@
-$t(() => {
-  $t.ajax({
-    url: "https://api.github.com/users/thansen29/repos",
-    success: (repos) => handleRepos(repos)
-  });
 
-  function handleRepos(repos){
+  // $(document).ready(function() {
+  //   $('.git-form').on('submit', handleSubmit);
+  // });
+
+// $('.git-form').on('submit', handleSubmit);
+
+  //TODO: error handling
+  const handleSubmit = (e) => {
+    // debugger
+    e.preventDefault();
+    const name = $t('.field').val();
+    $t.ajax({
+      url: `https://api.github.com/users/${name}/repos?per_page=100`,
+      success: (repos) => handleRepos(repos)
+    })
+  };
+
+  const handleRepos = (repos) => {
+    debugger
     repos = JSON.parse(repos);
     const masterList = $t(".banner-list");
+    masterList.empty();
+    let count = 0;
     repos.forEach((repo) => {
+      count += 1;
+      console.log(count);
       const listItem = $t("<li>");
       const langIcon = handleLanguage(repo.language);
       listItem.addClass("list-item");
@@ -15,9 +32,9 @@ $t(() => {
       listItem.append(`<a href=${repo.html_url}>${repo.name}</a>`);
       masterList.append(listItem);
     });
-  }
+  };
 
-  function handleLanguage(language){
+  const handleLanguage = (language) => {
     const i = $t("<i>");
     switch (language) {
       case "Ruby":
@@ -48,7 +65,11 @@ $t(() => {
         i.addClass("devicon-typescript-plain");
         return i;
       default:
-
+        i.addClass("fa");
+        i.addClass("fa-github");
+        return i;
     }
-  }
-});
+  };
+  // $('.git-form').on('submit', handleSubmit);
+
+  document.addEventListener("submit", handleSubmit);

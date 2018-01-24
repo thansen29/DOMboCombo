@@ -1,8 +1,23 @@
+html {
+  /* overflow-y: scroll; */
+}
+body {
+  position: relative;
+}
 .main-container {
   background: #21162a;
+  /* min-height: 100vh; */
   height: 100%;
   width: 100%;
-  position: fixed;
+  overflow: scroll;
+
+}
+
+.git-form {
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+  margin-left: 3%;
 }
 
 .content {
@@ -41,11 +56,20 @@
   margin-top: 1.5%;
   display: flex;
   justify-content: center;
+
+
+}
+
+.fa {
+  text-align: left;
+  padding: 0 10px;
 }
 
 .banner-list {
   padding: 10px;
   border-radius: 3px;
+  height: 100%;
+  overflow: scroll;
 }
 
 .list-item {
@@ -55,7 +79,7 @@
 }
 
 .list-item:hover {
-  cursor:pointer;
+  cursor: pointer;
   color: #007FB6;
   transition: color 200ms;
 }
@@ -63,4 +87,26 @@
 [class^=devicon-] {
   text-align: left;
   padding: 5px 10px;
+}
+
+.submit {
+  margin-left: 20px;
+  padding: 10px;
+  color: white;
+  border: 1px solid black;
+}
+
+.field {
+  background: white;
+  padding: 10px 5px;
+  border-radius: 3px;
+}
+
+.field:focus {
+  border: 2px solid #007FB6;
+}
+
+.submit:hover {
+  color: #007FB6;
+  transition: color 200ms;
 }
