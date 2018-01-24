@@ -3,11 +3,9 @@
   <head>
     <meta charset="utf-8">
     <title>DOMbo Combo</title>
+    <link rel="shortcut icon" href="favicon.ico">
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
-
     <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script src="lib/dombo_combo.js" charset="utf-8"></script>
     <script src="scripts/main.js" charset="utf-8"></script>
     <link rel="stylesheet" href="./styles/main.css">
@@ -35,9 +33,14 @@
         </header>
 
         <form class="git-form">
-          <input class="field" type="text" value="">
+          <div>
+            <input class="field" type="text" value="">
 
-          <input class="submit" type="submit" value="Submit">
+            <input class="submit" type="submit" value="Submit">
+          </div>
+          <div class="errors">No user matches that name</div>
+
+          </div>
         </form>
 
         <nav class="banner">
@@ -47,5 +50,8 @@
 
       </section>
     </section>
+    <script>
+      $t('.git-form').on('submit', handleSubmit);
+    </script>
   </body>
 </html>

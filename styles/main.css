@@ -1,21 +1,18 @@
-html {
-  /* overflow-y: scroll; */
-}
-body {
-  position: relative;
-}
 .main-container {
   background: #21162a;
   /* min-height: 100vh; */
   height: 100%;
   width: 100%;
-  overflow: scroll;
+  /* overflow: scroll; */
+  color: white;
 
 }
 
 .git-form {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+
   padding-top: 20px;
   margin-left: 3%;
 }
@@ -56,8 +53,6 @@ body {
   margin-top: 1.5%;
   display: flex;
   justify-content: center;
-
-
 }
 
 .fa {
@@ -99,6 +94,7 @@ body {
 .field {
   background: white;
   padding: 10px 5px;
+  color: black;
   border-radius: 3px;
 }
 
@@ -109,4 +105,15 @@ body {
 .submit:hover {
   color: #007FB6;
   transition: color 200ms;
+}
+
+.errors {
+  display: none;
+  color: red;
+  font-size: 14px;
+  padding: 10px;
+}
+
+.visible {
+  display: block;
 }

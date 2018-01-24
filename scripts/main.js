@@ -1,37 +1,37 @@
-
-  // $(document).ready(function() {
-  //   $('.git-form').on('submit', handleSubmit);
-  // });
-
-// $('.git-form').on('submit', handleSubmit);
-
-  //TODO: error handling
   const handleSubmit = (e) => {
-    // debugger
     e.preventDefault();
     const name = $t('.field').val();
     $t.ajax({
       url: `https://api.github.com/users/${name}/repos?per_page=100`,
-      success: (repos) => handleRepos(repos)
+      success: (repos) => handleRepos(repos),
+      error: () => handleErrors()
     })
   };
 
-  const handleRepos = (repos) => {
-    debugger
-    repos = JSON.parse(repos);
+  const handleErrors = () => {
+    $t('.errors').addClass("visible");
     const masterList = $t(".banner-list");
     masterList.empty();
-    let count = 0;
-    repos.forEach((repo) => {
-      count += 1;
-      console.log(count);
-      const listItem = $t("<li>");
-      const langIcon = handleLanguage(repo.language);
-      listItem.addClass("list-item");
-      listItem.append(langIcon);
-      listItem.append(`<a href=${repo.html_url}>${repo.name}</a>`);
-      masterList.append(listItem);
-    });
+  };
+
+  const handleRepos = (repos) => {
+    repos = JSON.parse(repos);
+    const masterList = $t(".banner-list");
+    $t('.errors').removeClass("visible");
+    masterList.empty();
+    if(repos.length){
+      let count = 0;
+      repos.forEach((repo) => {
+        const listItem = $t("<li>");
+        const langIcon = handleLanguage(repo.language);
+        listItem.addClass("list-item");
+        listItem.append(langIcon);
+        listItem.append(`<a href=${repo.html_url}>${repo.name}</a>`);
+        masterList.append(listItem);
+      });
+    } else {
+      masterList.append("There's nothing here");
+    }
   };
 
   const handleLanguage = (language) => {
@@ -70,6 +70,3 @@
         return i;
     }
   };
-  // $('.git-form').on('submit', handleSubmit);
-
-  document.addEventListener("submit", handleSubmit);
