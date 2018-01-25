@@ -113,3 +113,8 @@
 .visible {
   display: block;
 }
+
+.instructions {
+  text-align: center;
+  padding-top: 10px;
+}
