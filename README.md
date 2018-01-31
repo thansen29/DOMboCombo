@@ -1,6 +1,11 @@
 # DOMbo Combo
 DOMbo Combo is a lightweight library designed to enhance AJAX requests and manipulate DOM elements. Simply fill in a github username, and DOMbo Combo will
 make an AJAX request to Github's servers, and insert the relevant data in to the DOM.
+
+[See Live](http://www.tomhansen.io/DOMboCombo/)
+
+To use DOMbo Combo, simply download the DOMboCombo zip file, and use $t('selector') to turn your HTML elements in to custom DOMNodeCollection objects, which you can then use the API listed below on.
+
 ## API
 
 ### each(cb)
